@@ -13,6 +13,7 @@
 // limitations under the License.
 
 #include "orbbec.hpp"
+#include "constants.hpp"
 #include "device_control.hpp"
 #include "encoding.hpp"
 #include "orbbec_firmware.hpp"
@@ -50,22 +51,6 @@ namespace vsdk = ::viam::sdk;
 
 vsdk::Model Orbbec::model_astra2("viam", "orbbec", "astra2");
 vsdk::Model Orbbec::model_gemini_335le("viam", "orbbec", "gemini_335le");
-
-// CONSTANTS BEGIN
-const std::string kColorSourceName = "color";
-const std::string kColorMimeTypeJPEG = "image/jpeg";
-const std::string kColorMimeTypePNG = "image/png";
-const std::string kDepthSourceName = "depth";
-const std::string kDepthMimeTypeViamDep = "image/vnd.viam.dep";
-const std::string kPcdMimeType = "pointcloud/pcd";
-// If the firmwareUrl is changed to a new version, also change the minFirmwareVer const.
-constexpr char service_name[] = "viam_orbbec";
-const float mmToMeterMultiple = 0.001;
-const uint64_t maxFrameAgeUs = 1e6;  // time until a frame is considered stale, in microseconds (equal to 1 sec)
-
-const uint64_t timestampWarningLogIntervalUs = 300e6;  // log at warning level at most every 5 minutes
-const uint64_t maxFrameSetTimeDiffUs =
-    2000;  // max time difference between frames in a frameset to be considered simultaneous, in microseconds (equal to 2 ms)
 
 // Model configurations
 namespace {

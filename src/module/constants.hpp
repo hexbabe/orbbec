@@ -41,4 +41,11 @@ const uint64_t timestampWarningLogIntervalUs = 300e6;
 // in microseconds (equal to 2 ms)
 const uint64_t maxFrameSetTimeDiffUs = 2000;
 
+// Attribute key constants — avoid repeating raw string literals throughout the code
+const std::string kAttrSerialNumber = "serial_number";
+const std::string kAttrSensors = "sensors";
+const std::string kAttrWidth = "width";
+const std::string kAttrHeight = "height";
+const std::string kAttrFormat = "format";
+
 }  // namespace orbbec

@@ -1,5 +1,4 @@
 #include "discovery.hpp"
-#include "constants.hpp"
 #include "orbbec.hpp"
 
 namespace discovery {
@@ -55,7 +54,7 @@ std::vector<vsdk::ResourceConfig> OrbbecDiscovery::discover_resources(const vsdk
                 name << "orbbec-" << i + 1;
 
                 vsdk::ProtoStruct attributes;
-                attributes.emplace(orbbec::kAttrSerialNumber, serialNumber);
+                attributes.emplace("serial_number", serialNumber);
 
                 // Detect model and create appropriate resource
                 std::string viamModelSuffix;
